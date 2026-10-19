@@ -1,754 +1,84 @@
 
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="KOYOMI公式サイト。AIバーチャルモデルKOYOMIの30 PROJECT、季節のスタイルブック、管理栄養士監修の食生活ガイド。">
-<meta name="theme-color" content="#fcf8fb">
-<title>KOYOMI｜30 PROJECT・Stylebook・Food & Lifestyle</title>
-<style>
-:root {
-  --bg:#fcf8fb;
-  --paper:#fff;
-  --ink:#3d3540;
-  --muted:#766b78;
-  --lav:#806a9c;
-  --lavlight:#eee6f4;
-  --pink:#f7e5ed;
-  --line:#e9e0e9;
-  --shadow:0 12px 35px rgba(93,64,100,.07);
-}
-* { box-sizing:border-box; }
-html { scroll-behavior:smooth; }
-body {
-  margin:0;
-  background:var(--bg);
-  color:var(--ink);
-  font-family:-apple-system,BlinkMacSystemFont,
-  "Hiragino Kaku Gothic ProN","Noto Sans JP",sans-serif;
-  line-height:1.85;
-}
-a { color:inherit; text-decoration:none; }
-a:focus-visible {
-  outline:3px solid var(--lav);
-  outline-offset:3px;
-}
-img { max-width:100%; }
-header {
-  background:rgba(255,255,255,.96);
-  border-bottom:1px solid var(--line);
-  position:relative;
-  z-index:10;
-}
-.head {
-  max-width:1120px;
-  margin:auto;
-  padding:15px 24px;
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:18px;
-}
-.logo {
-  color:var(--lav);
-  font-weight:800;
-  font-size:25px;
-  letter-spacing:4px;
-}
-nav {
-  display:flex;
-  gap:18px;
-  flex-wrap:wrap;
-  font-size:13px;
-}
-nav a:hover,.link:hover { color:var(--lav); }
-.hero {
-  min-height:570px;
-  display:flex;
-  align-items:center;
-  background-color:#f9f0f7;
-  background-image:
-    linear-gradient(90deg,
-      rgba(255,250,253,.98) 0%,
-      rgba(255,250,253,.91) 34%,
-      rgba(255,250,253,.42) 62%,
-      rgba(255,250,253,.04) 88%),
-    url("1C7DF61F-C2E2-4AD6-9B46-5C53F10B654A.png");
-  background-size:cover;
-  background-position:center;
-}
-.hero-inner {
-  width:100%;
-  max-width:1120px;
-  margin:auto;
-  padding:75px 24px;
-}
-.hero-copy { max-width:570px; }
-.eyebrow,.kicker {
-  font-size:12px;
-  font-weight:800;
-  letter-spacing:2.5px;
-  color:var(--lav);
-}
-h1 {
-  font-size:clamp(32px,5vw,52px);
-  line-height:1.45;
-  letter-spacing:1px;
-  margin:18px 0;
-}
-h2 {
-  font-size:clamp(24px,3vw,31px);
-  line-height:1.5;
-  margin:8px 0 0;
-}
-h3 {
-  font-size:19px;
-  line-height:1.5;
-  margin:12px 0;
-}
-.hero p {
-  max-width:510px;
-  font-size:15px;
-  color:#544b57;
-}
-.actions {
-  display:flex;
-  gap:12px;
-  flex-wrap:wrap;
-  margin-top:25px;
-}
-.btn {
-  display:inline-flex;
-  justify-content:center;
-  align-items:center;
-  min-height:44px;
-  border-radius:40px;
-  padding:10px 23px;
-  background:var(--lav);
-  color:#fff;
-  font-size:14px;
-  font-weight:700;
-  transition:transform .2s,background .2s;
-}
-.btn:hover {
-  background:#65517e;
-  transform:translateY(-2px);
-}
-.btn.alt {
-  background:#fff;
-  border:1px solid var(--lav);
-  color:var(--lav);
-}
-.btn.alt:hover { background:var(--lavlight); }
-section {
-  max-width:1120px;
-  margin:auto;
-  padding:75px 24px;
-  scroll-margin-top:24px;
-}
-.heading {
-  text-align:center;
-  margin-bottom:34px;
-}
-.heading p {
-  font-size:14px;
-  color:var(--muted);
-  margin:10px auto;
-  max-width:670px;
-}
-.intro {
-  text-align:center;
-  max-width:720px;
-  margin:auto;
-}
-.intro p { font-size:15px; }
-.highlight {
-  background:linear-gradient(135deg,#f6e9f3,#f0eafa);
-  border:1px solid #e6d9ed;
-  border-radius:22px;
-  padding:28px;
-  margin-top:26px;
-  text-align:left;
-}
-.highlight strong { color:#6b547e; }
-.cards {
-  display:grid;
-  grid-template-columns:repeat(2,minmax(0,1fr));
-  gap:22px;
-}
-.card {
-  background:var(--paper);
-  border:1px solid var(--line);
-  border-radius:22px;
-  padding:28px;
-  box-shadow:var(--shadow);
-}
-.card p {
-  font-size:14px;
-  color:var(--muted);
-}
-.tag {
-  font-size:11px;
-  font-weight:800;
-  letter-spacing:1.4px;
-  color:var(--lav);
-}
-.chip {
-  display:inline-block;
-  background:var(--lavlight);
-  color:#6b547e;
-  border-radius:50px;
-  padding:3px 12px;
-  font-size:12px;
-  font-weight:700;
-}
-.chip.planned {
-  background:#f5eaf0;
-  color:#925c78;
-}
-.link {
-  color:var(--lav);
-  font-weight:800;
-  font-size:14px;
-  display:inline-block;
-  margin-top:8px;
-}
-.dream {
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:24px;
-  padding:34px;
-  text-align:center;
-  box-shadow:var(--shadow);
-}
-.dream .date {
-  font-size:clamp(24px,4vw,38px);
-  font-weight:800;
-  color:var(--lav);
-  letter-spacing:1px;
-}
-.timeline {
-  max-width:790px;
-  margin:auto;
-  position:relative;
-}
-.event {
-  display:grid;
-  grid-template-columns:125px 1fr;
-  gap:20px;
-  padding:0 0 24px;
-  position:relative;
-}
-.event:not(:last-child)::before {
-  content:"";
-  position:absolute;
-  left:136px;
-  top:21px;
-  bottom:0;
-  width:2px;
-  background:#e4d8e9;
-}
-.event-date {
-  font-size:13px;
-  color:var(--lav);
-  font-weight:800;
-  padding-top:3px;
-  text-align:right;
-}
-.event-body {
-  position:relative;
-  background:#fff;
-  border:1px solid var(--line);
-  border-radius:17px;
-  padding:19px 22px;
-}
-.event-body::before {
-  content:"";
-  position:absolute;
-  left:-16px;
-  top:16px;
-  width:9px;
-  height:9px;
-  border:3px solid var(--lav);
-  border-radius:50%;
-  background:#fff;
-}
-.event-body h3 {
-  font-size:17px;
-  margin:0 0 5px;
-}
-.event-body p {
-  font-size:13px;
-  color:var(--muted);
-  margin:0;
-}
-.event-body .chip { margin-top:8px; }
-.note {
-  font-size:12px;
-  color:var(--muted);
-  max-width:790px;
-  margin:18px auto 0;
-}
-.book-card {
-  display:flex;
-  flex-direction:column;
-  min-height:240px;
-}
-.book-card .bottom { margin-top:auto; }
-.book-card.featured {
-  background:linear-gradient(145deg,#fff,#f9f0fb);
-  border:2px solid #d9c6e7;
-}
-.price {
-  font-size:20px;
-  font-weight:800;
-  color:#65517e;
-  margin:10px 0;
-}
-.social { text-align:center; }
-.social .actions { justify-content:center; }
-footer {
-  background:#eee8f2;
-  text-align:center;
-  padding:35px 20px;
-  color:var(--muted);
-  font-size:12px;
-}
-footer p { margin:8px 0; }
-.disclosure {
-  font-size:12px;
-  color:var(--muted);
-}
-@media(max-width:800px) {
-  nav { gap:10px; }
-  .head { align-items:flex-start; }
-  .logo { font-size:21px; }
-  .hero { background-position:60% center; }
-  .cards { gap:15px; }
-}
-@media(max-width:600px) {
-  .head {
-    padding:14px 17px;
-    flex-direction:column;
-    align-items:center;
-    gap:8px;
-  }
-  nav {
-    justify-content:center;
-    font-size:12px;
-  }
-  .hero {
-    min-height:680px;
-    align-items:flex-end;
-    background-color:#fffafd;
-    background-image:
-      linear-gradient(180deg,
-        rgba(255,250,253,0) 0%,
-        rgba(255,250,253,0) 30%,
-        rgba(255,250,253,.35) 43%,
-        rgba(255,250,253,.85) 55%,
-        #fffafd 68%),
-      url("1C7DF61F-C2E2-4AD6-9B46-5C53F10B654A.png");
-    background-size:100% 100%,auto 410px;
-    background-position:center,65% top;
-    background-repeat:no-repeat;
-  }
-  .hero-inner { padding:325px 22px 35px; }
-  .hero p { font-size:13px; }
-  .hero .actions { flex-direction:column; }
-  .hero .btn { width:100%; }
-  section { padding:55px 20px; }
-  .cards { grid-template-columns:1fr; }
-  .card { padding:24px; }
-  .event {
-    grid-template-columns:80px 1fr;
-    gap:14px;
-  }
-  .event:not(:last-child)::before { left:89px; }
-  .event-date { font-size:11px; }
-  .event-body { padding:15px; }
-  .event-body::before { left:-13px; }
-  .dream { padding:25px 18px; }
-}
-@media(prefers-reduced-motion:reduce) {
-  html { scroll-behavior:auto; }
-  .btn { transition:none; }
-}
-</style>
-</head>
-<body>
+<!-- KOYOMI Autumn Days Vol.1 公開予告 -->
+<section id="autumn-days" style="
+  max-width: 760px;
+  margin: 48px auto;
+  padding: 32px 20px;
+  text-align: center;
+  background: #fff8f3;
+  border: 1px solid #ead9ce;
+  border-radius: 20px;
+  color: #493b36;
+">
+  <p style="
+    font-size: 12px;
+    letter-spacing: 3px;
+    color: #986d78;
+  ">
+    KOYOMI 30 PROJECT
+  </p>
 
-<header>
-  <div class="head">
-    <a class="logo" href="#top">KOYOMI</a>
-    <nav aria-label="メインメニュー">
-      <a href="#about">PROFILE</a>
-      <a href="#project">30 PROJECT</a>
-      <a href="#stylebooks">STYLEBOOK</a>
-      <a href="#schedule">SCHEDULE</a>
-      <a href="#articles">ARTICLES</a>
-      <a href="#social">SNS</a>
-    </nav>
-  </div>
-</header>
+  <h2 style="
+    font-family: Georgia, serif;
+    font-size: 32px;
+    margin: 12px 0;
+  ">
+    Autumn Days
+  </h2>
 
-<main id="top">
+  <p style="font-size: 14px; color: #846c65;">
+    Stylebook Vol.1
+  </p>
 
-<div class="hero">
-  <div class="hero-inner">
-    <div class="hero-copy">
-      <div class="eyebrow">AI MODEL × FASHION × FOOD</div>
-      <h1>季節を楽しむ。<br>わたしを見つける。</h1>
-      <p>
-        ファッションも、おいしいものも、好き。<br>
-        29歳のバーチャルモデルKOYOMIが、
-        30歳の誕生日に向けて、
-        自分らしいスタイルブックを作っていきます。
-      </p>
-      <div class="actions">
-        <a class="btn" href="#project">KOYOMIの夢を見る</a>
-        <a class="btn alt" href="#articles">食生活の記事を読む</a>
-      </div>
-    </div>
-  </div>
-</div>
+  <img
+    src="IMG_2338.jpeg"
+    alt="KOYOMI Autumn Days Vol.1 表紙"
+    loading="lazy"
+    style="
+      display: block;
+      width: 100%;
+      max-width: 360px;
+      height: auto;
+      margin: 24px auto;
+      border-radius: 12px;
+      box-shadow: 0 8px 24px rgba(70,40,30,0.12);
+    "
+  >
 
-<section id="about">
-  <div class="heading">
-    <div class="kicker">PROFILE</div>
-    <h2>KOYOMIについて</h2>
-  </div>
-  <div class="intro">
-    <p>
-      はじめまして、KOYOMI（こよみ）です。<br>
-      1997年10月1日生まれ、
-      29歳の架空のAIバーチャルモデル。
-    </p>
-    <p>
-      季節のお洋服、カフェ、甘いものが好き。<br>
-      ちょっと迷いながらも、
-      自分に似合うスタイルを探しています。
-    </p>
-    <p>
-      食生活の情報は、実在する管理栄養士と一緒に制作。<br>
-      食べる楽しさを大切にしながら、
-      暮らしに取り入れやすいヒントを届けます。
-    </p>
-    <div class="highlight">
-      <strong>KOYOMIからのお知らせ</strong>
-      <p>
-        私の夢は、30歳になる2027年10月1日に、
-        みんなと一緒に作った記念スタイルブックを
-        完成させること。
-        コーデや表紙の投票にも、
-        ぜひ参加してください。
-      </p>
-      <p class="disclosure">
-        ※KOYOMIはAIで制作された架空のキャラクターです。
-        人物画像はAI生成です。
-        栄養情報は実在する管理栄養士が監修しています。
-        掲載情報は一般向けであり、
-        個別の診断・治療に代わるものではありません。
-      </p>
-    </div>
-  </div>
-</section>
+  <p style="font-size: 16px; line-height: 1.9;">
+    秋のファッションと、<br>
+    毎日の食事を楽しむヒントをまとめた<br>
+    無料スタイルブック。
+  </p>
 
-<section id="project">
-  <div class="heading">
-    <div class="kicker">KOYOMI 30 PROJECT</div>
-    <h2>30歳までの、四季の物語。</h2>
-    <p>
-      ファンと一緒に選びながら、
-      一冊の記念作品を作っていくプロジェクト。
-    </p>
-  </div>
-  <div class="dream">
-    <div class="kicker">OUR DESTINATION</div>
-    <div class="date">2027.10.01</div>
-    <h3>30th Birthday Stylebook</h3>
-    <p>
-      秋から始まって、冬、春、夏へ。<br>
-      好きな服、好きな色、
-      まだ知らない表情を集めて。<br>
-      30歳の誕生日に、
-      KOYOMIの記念スタイルブックを完成させます。
-    </p>
-    <span class="chip planned">
-      2026年10月25日 プロジェクト発表予定
-    </span>
-  </div>
-</section>
+  <p style="
+    margin-top: 20px;
+    font-size: 15px;
+    font-weight: bold;
+  ">
+    2026年11月15日 公開予定
+  </p>
 
-<section id="stylebooks">
-  <div class="heading">
-    <div class="kicker">STYLEBOOK</div>
-    <h2>KOYOMIのスタイルブック</h2>
-    <p>
-      無料で楽しめる季節の作品から、
-      限定カットを収録した特別版まで。
-    </p>
+  <div style="
+    display: inline-block;
+    margin-top: 14px;
+    padding: 12px 28px;
+    background: #a47782;
+    color: white;
+    border-radius: 30px;
+    font-size: 14px;
+  ">
+    Coming Soon
   </div>
 
-  <div class="cards">
-    <article class="card book-card">
-      <div class="tag">FREE STYLEBOOK · VOL.01</div>
-      <h3>Autumn Days</h3>
-      <p>
-        秋のコーデとKOYOMIの小さな物語を収録する、
-        はじめての無料デジタルスタイルブック。
-      </p>
-      <div class="bottom">
-        <span class="chip planned">
-          2026年11月15日 公開予定
-        </span>
-        <p class="disclosure">
-          ※制作中。公開時に閲覧・ダウンロード先を掲載します。
-        </p>
-      </div>
-    </article>
-
-    <article class="card book-card featured">
-      <div class="tag">PREMIUM STYLEBOOK</div>
-      <h3>Special Edition</h3>
-      <p>
-        限定写真や制作の裏側など、
-        無料版とは異なる内容を企画中です。
-      </p>
-      <div class="bottom">
-        <span class="chip planned">企画・検討中</span>
-        <p class="disclosure">
-          ※価格・内容・発売日は未定です。
-          現在販売していません。
-        </p>
-      </div>
-    </article>
-
-    <article class="card book-card">
-      <div class="tag">SEASONAL COLLECTION</div>
-      <h3>Winter / Spring / Summer</h3>
-      <p>
-        季節ごとのファッション企画。
-        お気に入りのコーデを選ぶ投票も実施予定。
-      </p>
-      <div class="bottom">
-        <span class="chip">順次公開予定</span>
-      </div>
-    </article>
-
-    <article class="card book-card">
-      <div class="tag">30TH ANNIVERSARY</div>
-      <h3>30th Birthday Stylebook</h3>
-      <p>
-        四季の思い出とファンが選んだ写真を集めた、
-        30歳の記念作品。
-      </p>
-      <div class="bottom">
-        <span class="chip planned">
-          2027年10月1日 公開目標
-        </span>
-      </div>
-    </article>
-  </div>
-</section>
-
-<section id="schedule">
-  <div class="heading">
-    <div class="kicker">SCHEDULE</div>
-    <h2>KOYOMIのこれから</h2>
-    <p>
-      次の楽しみを、先に少しだけ。
-      日程や内容は制作状況に応じて更新します。
-    </p>
-  </div>
-
-  <div class="timeline">
-    <div class="event">
-      <div class="event-date">2026.10.25</div>
-      <div class="event-body">
-        <h3>30 PROJECT 発表</h3>
-        <p>30歳に向けた夢と年間計画をお知らせします。</p>
-        <span class="chip planned">発表予定</span>
-      </div>
-    </div>
-
-    <div class="event">
-      <div class="event-date">2026.11.15</div>
-      <div class="event-body">
-        <h3>Autumn Days</h3>
-        <p>無料スタイルブック Vol.01 公開予定。</p>
-        <span class="chip planned">制作中</span>
-      </div>
-    </div>
-
-    <div class="event">
-      <div class="event-date">2026.12.20</div>
-      <div class="event-body">
-        <h3>Winter Collection — Cozy Days</h3>
-        <p>冬のコーデ特集とファン参加企画。</p>
-        <span class="chip planned">企画予定</span>
-      </div>
-    </div>
-
-    <div class="event">
-      <div class="event-date">2027.02.14</div>
-      <div class="event-body">
-        <h3>Sweet Moments</h3>
-        <p>バレンタインをテーマにした写真と食のコラム。</p>
-        <span class="chip planned">企画予定</span>
-      </div>
-    </div>
-
-    <div class="event">
-      <div class="event-date">2027.04.04</div>
-      <div class="event-body">
-        <h3>Spring Stylebook — Bloom</h3>
-        <p>春の無料スタイルブック第2弾を目指します。</p>
-        <span class="chip planned">公開目標</span>
-      </div>
-    </div>
-
-    <div class="event">
-      <div class="event-date">2027.07.07</div>
-      <div class="event-body">
-        <h3>Summer Collection — Wishes</h3>
-        <p>夏のファッションと記念作品の写真投票。</p>
-        <span class="chip planned">企画予定</span>
-      </div>
-    </div>
-
-    <div class="event">
-      <div class="event-date">2027.09.01</div>
-      <div class="event-body">
-        <h3>30 Days to 30</h3>
-        <p>誕生日まで30日。記念作品の制作過程を公開。</p>
-        <span class="chip planned">企画予定</span>
-      </div>
-    </div>
-
-    <div class="event">
-      <div class="event-date">2027.10.01</div>
-      <div class="event-body">
-        <h3>30th Birthday — Anniversary Stylebook</h3>
-        <p>
-          30歳の誕生日。
-          記念スタイルブック完成・公開を目指します。
-        </p>
-        <span class="chip">最終目標</span>
-      </div>
-    </div>
-  </div>
-
-  <p class="note">
-    ※上記は2026年10月時点の予定です。
-    販売商品・価格・詳細内容は正式発表まで未確定です。
+  <p style="
+    margin-top: 24px;
+    font-size: 12px;
+    color: #8b7972;
+    line-height: 1.7;
+  ">
+    KOYOMIはAIで制作された架空のキャラクターです。<br>
+    食生活に関する情報は管理栄養士が監修しています。
   </p>
 </section>
-
-<section id="articles">
-  <div class="heading">
-    <div class="kicker">ARTICLES</div>
-    <h2>KOYOMIの読みもの</h2>
-    <p>
-      ファッションと食生活。
-      毎日を少し心地よくするヒント。
-    </p>
-  </div>
-
-  <div class="cards">
-    <article class="card">
-      <div class="tag">ARTICLE 01 · INTRODUCTION</div>
-      <h3>はじめまして、KOYOMIです。</h3>
-      <p>
-        KOYOMIの自己紹介と、
-        これからお届けするお話。
-      </p>
-      <a class="link"
-         href="https://note.com/koyomi_ai_life/n/nfba91a28cfc6"
-         target="_blank"
-         rel="noopener noreferrer">
-        無料記事を読む →
-      </a>
-    </article>
-
-    <article class="card">
-      <div class="tag">ARTICLE 02 · FOOD & NUTRITION</div>
-      <h3>
-        コンビニでも大丈夫。
-        主食・主菜・副菜で考える食事の整え方
-      </h3>
-      <p>
-        おにぎり、卵、サラダなどを組み合わせる、
-        無理のない食事の選び方。
-      </p>
-      <a class="link"
-         href="https://note.com/koyomi_ai_life/n/n8cc0954918d3"
-         target="_blank"
-         rel="noopener noreferrer">
-        無料記事を読む →
-      </a>
-    </article>
-
-    <article class="card featured">
-      <span class="chip">有料note 第1弾</span>
-      <div class="tag" style="margin-top:12px">
-        ARTICLE 03 · PREMIUM GUIDE
-      </div>
-      <h3>
-        コンビニで迷わない！
-        管理栄養士監修・7日間の食事組み合わせガイド
-      </h3>
-      <p>
-        朝・昼・夕の21食例、
-        食品の選び替え表、
-        買い物チェックリストを収録。
-      </p>
-      <div class="price">300円</div>
-      <a class="btn"
-         href="https://note.com/koyomi_ai_life/n/nca889d1fc633"
-         target="_blank"
-         rel="noopener noreferrer">
-        有料記事を見る →
-      </a>
-    </article>
-  </div>
-</section>
-
-<section id="social" class="social">
-  <div class="heading">
-    <div class="kicker">CONNECT</div>
-    <h2>KOYOMIとつながる</h2>
-  </div>
-  <p>
-    日々のコーデや投票企画はXで。<br>
-    管理栄養士監修の食生活ガイドはnoteで。
-  </p>
-  <div class="actions">
-    <a class="btn"
-       href="https://x.com/koyomi_ai_life"
-       target="_blank"
-       rel="noopener noreferrer">
-      Xを見る
-    </a>
-    <a class="btn alt"
-       href="https://note.com/koyomi_ai_life"
-       target="_blank"
-       rel="noopener noreferrer">
-      noteを見る
-    </a>
-  </div>
-</section>
-
-</main>
-
-<footer>
-  <p>© 2026 KOYOMI. All Rights Reserved.</p>
-  <p>
-    KOYOMI is a fictional AI-generated character.<br>
-    Nutrition content is supervised by a registered dietitian.
-  </p>
-</footer>
-
-</body>
-</html>
+<!-- 公開予告ここまで -->
